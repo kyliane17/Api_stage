@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "2ed0068d-982d-4daa-91f6-89447cc9e631",
+		"name": "Collection ApiStudent",
+		"description": "[http://172.16.199.3/html/Api_stage/public/api/student](http://172.16.199.3/html/Api_stage/public/api/student)\n\n[La requète nous renvoie un tableau avec les étudiants avec la méthode get](http://172.16.199.3/html/Api_stage/public/api/studentLa)\n\n[http://172.16.199.3/html/Api_stage/public/api/student](http://172.16.199.3/html/Api_stage/public/api/studentLa)\n\n[La](http://172.16.199.3/html/Api_stage/public/api/studentLa) requète nous renvoie les données que l'on a saisit dans un tableau avec la méthide post que l'on vas pouvoir retrouver en refaisant un get\n\n[http://172.16.199.3/html/Api_stage/public/api/compagnies](http://172.16.199.3/html/Api_stage/public/api/compagnies)\n\nLa requète va nous renvoyer un tableau des entreprise déja enregistrer dans la base de données avec la methode get\n\n[http://172.16.199.3/html/Api_stage/public/api/compagnies](http://172.16.199.3/html/Api_stage/public/api/compagnies)\n\nla requète vas nous renvoyer des données saisie dans un tableau avec la methode post et on vas pourvoir le retouver dans le tableau avec la méthode get\n\n[http://172.16.199.3/html/Api_stage/public/api/intership](http://172.16.199.3/html/Api_stage/public/api/intership)\n\nLa requète va nous renvoyer un tableau contenant les stages avec entreprise et étudiant déja enregistrer dans la base de données avec la methode get\n\n[http://172.16.199.3/html/Api_stage/public/api/intership](http://172.16.199.3/html/Api_stage/public/api/intership)\n\nla requète vas nous renvoyer des données saisie dans un tableau avec la methode post et on vas pourvoir le retouver dans le tableau avec la méthode get",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24458979"
+	},
+	"item": [
+		{
+			"name": "methode get student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://172.16.199.3/html/Api_stage/public/api/student",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"199",
+						"3"
+					],
+					"path": [
+						"html",
+						"Api_stage",
+						"public",
+						"api",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "methode post student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://172.16.199.3/html/Api_stage/public/api/student",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"199",
+						"3"
+					],
+					"path": [
+						"html",
+						"Api_stage",
+						"public",
+						"api",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "methode get compagnies",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "methode post compagnies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://172.16.199.3/html/Api_stage/public/api/compagnies",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"199",
+						"3"
+					],
+					"path": [
+						"html",
+						"Api_stage",
+						"public",
+						"api",
+						"compagnies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "methode get intership",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "[http://172.16.199.3/html/Api_stage/public/api/](http://172.16.199.3/html/Api_stage/public/api/student)intership"
+			},
+			"response": []
+		},
+		{
+			"name": "methode post intership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://172.16.199.3/html/Api_stage/public/api/intership",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"199",
+						"3"
+					],
+					"path": [
+						"html",
+						"Api_stage",
+						"public",
+						"api",
+						"intership"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"http://172.16.199.3/html/Api_stage/public/api/student"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
