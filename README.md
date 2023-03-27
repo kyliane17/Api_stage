@@ -1,3 +1,6 @@
+Dossier Documentation : Registre des traitements envoyer pour la cnil et la collection postman pour les Methodes utilisés 
+
+
 Cette collection Postman contient un ensemble de requêtes API pour interagir avec un système de gestion des étudiants. Les requêtes peuvent être utilisées pour récupérer, créer ou mettre à jour des étudiants, des entreprises et des stages.
 Utilisation
 
