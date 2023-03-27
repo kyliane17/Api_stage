@@ -29,7 +29,7 @@ composer require symfony/serializer-pack
 Clonage du projet
 Récupérez le projet depouis GitHub.
 
-git clone git@github.com:LiliwoL/Symfony-API-Gestion-Stages-Etudiants.git
+git clone git@github.com:kyliane17/Api-stage.git
 cd Symfony-API-Gestion-Stages-Etudiants
 Installation des dépendances
 Dans le fichier composer.json, toutes les dépendances nécessaires sont listées. Installez-les avec la commande :
