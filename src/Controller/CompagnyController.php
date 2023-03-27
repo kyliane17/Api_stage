@@ -6,6 +6,7 @@ use App\Entity\Compagnies;
 use App\Entity\Student;
 use App\Repository\CompagniesRepository;
 use App\Repository\StudentRepository;
+use App\Services\ApiKeyServices;
 use DateTime;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -20,8 +21,12 @@ class CompagnyController extends AbstractController
     /**
      * @Route("/api/compagny", name="app-api-compagny", methods={"GET"})
      */
-    public function index( CompagniesRepository $compagniesRepository, NormalizerInterface $normalizer ): JsonResponse
+    public function index( CompagniesRepository $compagniesRepository, NormalizerInterface $normalizer, ApiKeyServices $apiKeyServices, Request $request ): JsonResponse
     {
+        $authorized = $apiKeyServices->chechApiKey($request, );
+
+        if($authorized == true)
+        {
 
 
 
@@ -42,6 +47,11 @@ class CompagnyController extends AbstractController
 
         // Debug in PostMan
         dd($compagnies, $json, $compagniesNormalised);
+
+    }
+    else{
+        return $this->json(['message'=>'tes chiants je dois revoir le code maintenant']);
+    }
 
 
         return $this->json([

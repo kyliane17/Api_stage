@@ -4,24 +4,33 @@ namespace App\Controller;
 
 use App\Entity\Student;
 use App\Repository\StudentRepository;
+use App\Services\ApiKeyService;
+use App\Services\ApiKeyServices;
 use DateTime;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Node\Stmt\Return_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
+
 class ApiStudentController extends AbstractController
 {
     /**
      * @Route("/api/student", name="app_api_student", methods={"GET"})
      */
-    public function index(StudentRepository $studentRepository, NormalizerInterface $normalizer ): JsonResponse
+    public function index(StudentRepository $studentRepository, NormalizerInterface $normalizer, ApiKeyServices $apiKeyServices, Request $request ): JsonResponse
     {
             
-
+        $authorized = $apiKeyServices->chechApiKey($request, );
+       
+        
+        if($authorized == true)
+        {
+     
 
         //Récupérer tout mes students
         // Récupération de tous les étudiants
@@ -41,6 +50,10 @@ class ApiStudentController extends AbstractController
 
         // Debug in PostMan
         dd($students, $json, $studentsNormalised);
+    }
+    else{
+        return $this->json(['message'=>'relou je dois revoir le code maintenant']);
+    }
 
 
         return $this->json([

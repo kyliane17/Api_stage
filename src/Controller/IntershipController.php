@@ -6,6 +6,7 @@ use App\Entity\Intership;
 use App\Repository\CompagniesRepository;
 use App\Repository\IntershipRepository;
 use App\Repository\StudentRepository;
+use App\Services\ApiKeyServices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,9 +20,13 @@ class IntershipController extends AbstractController
     /**
      * @Route("/api/intership", name="app_intership" ,methods={"GET"}))
      */
-    public function index(IntershipRepository $intershipRepository, NormalizerInterface $normalizerInterface): JsonResponse
+    public function index(IntershipRepository $intershipRepository, NormalizerInterface $normalizerInterface,  ApiKeyServices $apiKeyServices, Request $request ): JsonResponse
     {
 
+        $authorized = $apiKeyServices->chechApiKey($request, );
+
+        if($authorized == true)
+        {
         $intership = $intershipRepository->findAll();
 
         $json = json_encode($intership);
@@ -33,6 +38,10 @@ class IntershipController extends AbstractController
         ]);
         
         dd($intership, $json, $intershipNormalised);
+    }
+    else{
+        return $this->json(['message'=>'tes chiants je dois revoir le code maintenant']);
+    }
         
         return $this->json([
             'message' => 'Welcome to your new controller!',
